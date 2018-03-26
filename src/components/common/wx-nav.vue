@@ -5,7 +5,7 @@
             <dt class="iconfont icon-wechat" >
                 <i class="new-msg-count" v-show="$store.state.newMsgCount">{{$store.state.newMsgCount}}</i>
             </dt>
-            <dd>微信</dd>
+            <dd>登录</dd>
         </router-link>
 		<router-link to="/contact" tag="dl">
             <dt class="iconfont icon-contact" >

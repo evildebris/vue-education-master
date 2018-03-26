@@ -2,7 +2,7 @@
 vue2 app demo
 
 ## 环境配置
-[开发需要使用工具koala](http://koala-app.com/)
+开发需要使用工具[koala](http://koala-app.com/)
 ```
 安装
     npm/cnpm install --save-dev
