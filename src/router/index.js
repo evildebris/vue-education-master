@@ -8,6 +8,10 @@ const routes = [{
         name: "登陆",
         component: resolve => require(["../components/login/login.vue"], resolve)
     },{
+        path: '/register',
+        name: "注册",
+        component: resolve => require(["../components/login/register.vue"], resolve)
+    },{
         path: '/wechat/home',
         name: "微信",
         component: resolve => require(["../components/wechat/wechat.vue"], resolve)
