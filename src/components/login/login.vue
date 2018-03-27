@@ -42,6 +42,8 @@ export default {
     methods:{
         loginClick(){
             console.log("login");
+            this.$store.commit("refreshCookie",{userName:"test"});
+            this.$router.push({path:"/"});
         }
     }
 }

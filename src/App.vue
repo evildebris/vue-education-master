@@ -49,6 +49,11 @@
                 "leaveAnimate": "" //页面离开动效
             }
         },
+        computed:{
+            hasLogin(){
+                return this.$store.state.user.hasLogin;
+            }
+        },
         watch: {
             // 监听 $route 为店内页设置不同的过渡效果
             "$route" (to, from) {

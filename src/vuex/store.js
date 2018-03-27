@@ -21,6 +21,10 @@ const state = {
     apiUrl: {
         demo: apiPublicDomain + ""
     },
+    user:{
+        userName:undefined,
+        hasLogin:false
+    },
     msgList: {
         stickMsg: [], //置顶消息列表 后期需要
         baseMsg: [{ //普通消息列表

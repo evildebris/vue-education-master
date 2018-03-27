@@ -1,19 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../vuex/store'
 
 Vue.use(Router)
     //app整体由店面页和店内页组成 暂时并没有用到嵌套路由
 const routes = [{
-        path: '/',
+        path: '/login',
         name: "登陆",
-        component: resolve => require(["../components/login/login.vue"], resolve)
+        components: {"subPage":resolve => require(["../components/login/login.vue"], resolve)}
     },{
         path: '/register',
         name: "注册",
-        component: resolve => require(["../components/login/register.vue"], resolve)
+        components: {"subPage":resolve => require(["../components/login/register.vue"], resolve)}
     },{
-        path: '/wechat/home',
+        path: '/',
         name: "微信",
+        meta: {
+            // 添加该字段，表示进入这个路由是需要登录的
+            requireAuth: true,
+        },
         component: resolve => require(["../components/wechat/wechat.vue"], resolve)
     }, {
         path: '/wechat/dialogue',
@@ -164,15 +169,22 @@ const routes = [{
     }
 
 ]
-export default new Router({
-    base: "/vue-wechat/",
+const router = new Router({
+    base: "/vue-education/",
     routes,
-    // scrollBehavior(to, from, savedPosition) {
-    //     if (savedPosition) {
-    //         return savedPosition
-    //     } else {
-    //         return { x: 0, y: 0 }
-    //     }
-    // }
-
-})
+});
+router.beforeEach((to, from, next) => {
+    // 判断该路由是否需要登录权限
+    if (to.meta.requireAuth) {
+        store.commit("refreshCookie");
+        console.log(`hasLogin is ${store.state.user.hasLogin}`);
+        if (store.state.user.hasLogin) {
+            next();
+        }else{
+            next({path: '/login'});
+        }
+    }else {
+        next();
+    }
+});
+export default router
