@@ -71,6 +71,9 @@ input::-webkit-input-placeholder{
     &>p{
       flex-grow:1;
       text-align: center;
+      span{
+        color: #fff;
+      }
     }
   }
 }

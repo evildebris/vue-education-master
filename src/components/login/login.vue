@@ -24,7 +24,7 @@
             <a class="weui-btn" href="#" @click.prevent="loginClick()">登录</a>
         </div>
         <div class="login_box">
-            <p>忘记密码</p>
+            <router-link to="/forget" tag="p">忘记密码</router-link>
             <router-link to="/register" tag="p">立即注册</router-link>
         </div>
     </div>

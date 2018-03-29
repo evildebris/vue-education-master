@@ -13,13 +13,17 @@ const routes = [{
         name: "注册",
         components: {"subPage":resolve => require(["../components/login/register.vue"], resolve)}
     },{
+        path: '/forget',
+        name: "忘记密码",
+        components: {"subPage":resolve => require(["../components/login/forget.vue"], resolve)}
+    },{
         path: '/',
-        name: "微信",
+        name: "个人中心",
         meta: {
             // 添加该字段，表示进入这个路由是需要登录的
             requireAuth: true,
         },
-        component: resolve => require(["../components/wechat/wechat.vue"], resolve)
+        component: resolve => require(["../components/home/home.vue"], resolve)
     }, {
         path: '/wechat/dialogue',
         name: "",

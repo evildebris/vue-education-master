@@ -1,0 +1,74 @@
+#self_manage{
+  width: 100%;
+  position: relative;
+  .manage_info{
+    width: 100%;
+    padding: 20px 10px 0;
+    position: relative;
+    .userImg{
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+    .userName{
+      position: absolute;
+      left: 70px;
+      top:25px;
+      color: #4e5156;
+      font-size: 16px;
+      width: 80px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .userAction{
+      position: absolute;
+      top:20px;
+      display: flex;
+      left: 150px;
+      width: calc(100% - 190px);
+      justify-content:center;
+      color: #ff9800;
+      &>p{
+        flex-grow:1;
+        text-align: center;
+      }
+    }
+    .userInfo{
+      position: absolute;
+      top:40px;
+      display: flex;
+      flex-wrap:wrap;
+      left: 140px;
+      width: calc(100% - 150px);
+      justify-content:center;
+      color: #ff9800;
+      &>div{
+        flex-grow:1;
+        text-align: left;
+        &>span{
+          color: #10aeff;
+        }
+      }
+    }
+  }
+
+  .manage_detail{
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 0 0;
+    display: flex;
+    justify-content:space-around;
+    align-content:space-around;
+    flex-flow: row wrap;
+    &>div{
+      width: 44%;
+      height: 100px;
+      margin-top: 6%;
+      text-align: center;
+      background: #10aeff;
+      border-radius: 10px;
+      box-shadow: 2px 1px 1px rgba(0,0,0,.3);
+    }
+  }
+}
