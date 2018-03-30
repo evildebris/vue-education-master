@@ -31,9 +31,9 @@
       <!--<div class="tips-masker" v-show="tips_isOpen"></div>-->
     </div>
     <div class="center">
-      <!-- <transition name="fade">
-          <div class="iconfont icon-return-arrow" style="left: 10px;position: absolute;font-size: 16px;" v-on:click="goBack" v-show="$route.path.split('/').length>2"><span>{{$store.state.backPageName}}</span></div> 
-      </transition>-->
+       <transition name="fade">
+          <div class="iconfont icon-return-arrow" style="left: 10px;position: absolute;font-size: 16px;" v-on:click="goBack" v-show="$route.meta.back"><span>{{$store.state.backPageName}}</span></div>
+      </transition>
       <!--显示当前页的名字-->
       <span>{{$store.state.currentPageName}}</span>
       <!--微信群 显示群名以及成员人数 好像和 dialogue 组件 写重了 sad -->

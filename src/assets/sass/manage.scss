@@ -72,3 +72,107 @@
     }
   }
 }
+#money_manage{
+  width: 100%;
+  padding-bottom: 10px;
+  .money_info{
+    width: 90%;
+    margin: 5%;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.12),-2px -2px 2px rgba(0,0,0,.12);
+    height: 100px;
+    color: #40B1F6;
+    position: relative;
+    line-height: 30px;
+    span{
+      line-height: 30px;
+      vertical-align:middle;
+    }
+    .money_font{
+      color: #F47252;
+      font-size: 30px;
+      line-height: 30px;
+    }
+    .right_font{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: right;
+      line-height: 30px;
+      font-size: 20px;
+      color: #777777;
+      padding-right: 10px;
+    }
+  }
+  .money_title{
+    color: #F9B105;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  .money_list{
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    bottom: 50px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &>li{
+      color: #40B1F6;
+      width: 100%;
+      margin-bottom: 5px;
+      background: #fff;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      display: flex;
+      justify-content:center;
+      flex-flow: row wrap;
+      span{
+        display: block;
+        width: 100px;
+      }
+      .left_font{
+        text-align: left;
+        flex-grow:1;
+        padding-left: 5px;
+      }
+      .middle_font{
+        flex-grow: 2;
+        text-align: center;
+      }
+      .right_font{
+        flex-grow: 1;
+        text-align: right;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+#recharge{
+  width: 100%;
+  background: #E4F5FF;
+  padding-bottom: 10px;
+  .money_info {
+    width: 90%;
+    margin: 5%;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .12), -2px -2px 2px rgba(0, 0, 0, .12);
+    height: 100px;
+    color: #40B1F6;
+    position: relative;
+  }
+  .recharge_btn{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    background: #FCA26D;
+    margin: 20px auto;
+  }
+}

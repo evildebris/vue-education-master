@@ -14,7 +14,7 @@
             </div>
         </div>
         <section class="manage_detail">
-            <div></div>
+            <div><router-link to="/money" tag="p">学习币中心</router-link></div>
             <div></div>
             <div></div>
             <div></div>
@@ -22,13 +22,9 @@
     </div>
 </template>
 <script>
-    import search from "../common/search"
-    import msgItem from "../wechat/msg-item"
     export default {
-        components: {
-            search,
-            msgItem
-        },
+        /*components: {
+        },*/
         mixins: [window.mixin],
         data() {
             return {

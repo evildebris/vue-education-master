@@ -24,95 +24,35 @@ const routes = [{
             requireAuth: true,
         },
         component: resolve => require(["../components/home/home.vue"], resolve)
-    }, {
-        path: '/wechat/dialogue',
-        name: "",
-        components: {
-            "default": resolve => require(["../components/wechat/wechat.vue"], resolve),
-            "subPage": resolve => require(["../components/wechat/dialogue.vue"], resolve)
-        }
+    },{
+        path: '/money',
+        name: "学习币中心",
+        meta: {
+            // 添加该字段，表示进入这个路由是需要登录的
+            requireAuth: true,
+            back:true
+        },
+        component: resolve => require(["../components/money/money.vue"], resolve)
+    },{
+        path: '/money/recharge',
+        name: "学习币中心",
+        meta: {
+            // 添加该字段，表示进入这个路由是需要登录的
+            requireAuth: true,
+            back:true
+        },
+        components:{ "subPage":  resolve => require(["../components/money/recharge.vue"], resolve)}
+    },{
+        path: '/money/stamina',
+        name: "学习币中心",
+        meta: {
+            // 添加该字段，表示进入这个路由是需要登录的
+            requireAuth: true,
+            back:true
+        },
+        components:{ "subPage":  resolve => require(["../components/money/stamina.vue"], resolve)}
     },
     {
-        path: '/wehchat/add-friend',
-        name: "",
-        components: {
-            "default": resolve => require(["../components/wechat/wechat.vue"], resolve),
-            "subPage": resolve => require(["../components/contact/add-friend.vue"], resolve)
-        }
-    },
-    {
-        path: '/wechat/dialogue/dialogue-info',
-        name: "",
-        components: {
-            "subPage": resolve => require(["../components/wechat/dialogue-info.vue"], resolve)
-        }
-    },
-    {
-        path: '/wechat/dialogue/dialogue-detail',
-        name: "",
-        components: {
-            "subPage": resolve => require(["../components/wechat/dialogue-detail.vue"], resolve)
-        }
-    },
-    {
-        path: '/contact',
-        name: "通讯录",
-        component: resolve => require(["../components/contact/contact.vue"], resolve)
-    },
-    {
-        path: '/contact/add-friend',
-        name: "",
-        components: {
-            "default": resolve => require(["../components/contact/contact.vue"], resolve),
-            "subPage": resolve => require(["../components/contact/add-friend.vue"], resolve)
-        }
-    },
-    {
-        path: '/contact/details',
-        name: "",
-        components: {
-            "default": resolve => require(["../components/contact/contact.vue"], resolve),
-            "subPage": resolve => require(["../components/contact/details.vue"], resolve)
-        }
-    },
-    {
-        path: '/contact/new-friends/mobile-contacts',
-        name: "通讯录朋友",
-        components: {
-            "subPage": resolve => require(["../components/contact/mobile-contacts.vue"], resolve)
-        }
-    },
-    {
-        path: '/contact/official-accounts',
-        name: "",
-        components: {
-            "default": resolve => require(["../components/contact/contact.vue"], resolve),
-            "subPage": resolve => require(["../components/contact/official-accounts.vue"], resolve)
-        }
-    },
-    {
-        path: '/contact/group-list',
-        name: "",
-        components: {
-            "default": resolve => require(["../components/contact/contact.vue"], resolve),
-            "subPage": resolve => require(["../components/contact/group-list.vue"], resolve)
-        }
-    },
-    {
-        path: '/contact/new-friends',
-        name: "",
-        components: {
-            "default": resolve => require(["../components/contact/contact.vue"], resolve),
-            "subPage": resolve => require(["../components/contact/new-friends.vue"], resolve)
-        }
-    }, {
-        path: '/contact/tags',
-        name: "新的朋友",
-        components: {
-            "default": resolve => require(["../components/contact/contact.vue"], resolve),
-            "subPage": resolve => require(["../components/contact/tags.vue"], resolve)
-        }
-    }, {
         path: '/explore',
         name: "发现",
         component: resolve => require(["../components/explore/explore.vue"], resolve)
