@@ -2,56 +2,65 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from '../vuex/store'
 
-Vue.use(Router)
-    //app整体由店面页和店内页组成 暂时并没有用到嵌套路由
+Vue.use(Router);
+//app整体由店面页和店内页组成 暂时并没有用到嵌套路由
 const routes = [{
-        path: '/login',
-        name: "登陆",
-        components: {"subPage":resolve => require(["../components/login/login.vue"], resolve)}
-    },{
-        path: '/register',
-        name: "注册",
-        components: {"subPage":resolve => require(["../components/login/register.vue"], resolve)}
-    },{
-        path: '/forget',
-        name: "忘记密码",
-        components: {"subPage":resolve => require(["../components/login/forget.vue"], resolve)}
-    },{
-        path: '/',
-        name: "个人中心",
-        meta: {
-            // 添加该字段，表示进入这个路由是需要登录的
-            requireAuth: true,
-        },
-        component: resolve => require(["../components/home/home.vue"], resolve)
-    },{
-        path: '/money',
-        name: "学习币中心",
-        meta: {
-            // 添加该字段，表示进入这个路由是需要登录的
-            requireAuth: true,
-            back:true
-        },
-        component: resolve => require(["../components/money/money.vue"], resolve)
-    },{
-        path: '/money/recharge',
-        name: "学习币中心",
-        meta: {
-            // 添加该字段，表示进入这个路由是需要登录的
-            requireAuth: true,
-            back:true
-        },
-        components:{ "subPage":  resolve => require(["../components/money/recharge.vue"], resolve)}
-    },{
-        path: '/money/stamina',
-        name: "学习币中心",
-        meta: {
-            // 添加该字段，表示进入这个路由是需要登录的
-            requireAuth: true,
-            back:true
-        },
-        components:{ "subPage":  resolve => require(["../components/money/stamina.vue"], resolve)}
+    path: '/login',
+    name: "登陆",
+    components: {"subPage":resolve => require(["../components/login/login.vue"], resolve)}
+},{
+    path: '/register',
+    name: "注册",
+    components: {"subPage":resolve => require(["../components/login/register.vue"], resolve)}
+},{
+    path: '/forget',
+    name: "忘记密码",
+    components: {"subPage":resolve => require(["../components/login/forget.vue"], resolve)}
+},{
+    path: '/',
+    name: "个人中心",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
     },
+    component: resolve => require(["../components/home/home.vue"], resolve)
+},{
+    path: '/classes',
+    name: "班级",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    component: resolve => require(["../components/classes/classes.vue"], resolve)
+},{
+    path: '/money',
+    name: "学习币中心",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    component: resolve => require(["../components/money/money.vue"], resolve)
+},{
+    path: '/money/recharge',
+    name: "充钱",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/money/recharge.vue"], resolve)}
+},{
+    path: '/money/stamina',
+    name: "体力值",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/money/stamina.vue"], resolve)}
+},
     {
         path: '/explore',
         name: "发现",

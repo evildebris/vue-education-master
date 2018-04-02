@@ -1,0 +1,116 @@
+#classes{
+  width: 100%;
+  background: #fff;
+  .header_info {
+    width: 100%;
+    padding:10px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.1);
+    &:after{
+      clear: both;
+      content: "";
+      display: block;
+    }
+    &>.iconfont{
+      font-size: 30px;
+      float: left;
+      line-height: 30px;
+    }
+    &>.detail{
+      border: 2px solid #CEBDBA;
+      width: calc(100% - 30px);
+      height: 30px;
+      border-radius: 15px;
+      float: left;
+      display: flex;
+      justify-content:space-between;
+      &>div{
+        flex-grow:1;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+  .classes_btns{
+    width: 100%;
+    padding: 10px;
+    &:after{
+      clear: both;
+      content: '';
+      display: block;
+    }
+
+    color: #fff;
+    &>.leftBtn{
+      float: left;
+      border-radius: 5px;
+      background: #FC6244;
+      border: 1px solid #FDA05B;
+      padding: 4px 6px;
+    }
+    &>.rightBtn{
+      float: right;
+      border-radius: 5px;
+      background: #1FB447;
+      border: 1px solid #FEE67E;
+      padding: 4px 6px;
+      height: 35px;
+      line-height: 25px;
+    }
+  }
+  .tables{
+    padding: 10px;
+    width: 100%;
+    .row{
+      width: 100%;
+      height: 40px;
+      margin-top: 10px;
+      &::after{
+        clear: both;
+        content: "";
+        display: block;
+      }
+      &>.table{
+        width: 15%;
+        height: 30px;
+        background: #F6BE74;
+        border-radius: 5px;
+        float: left;
+      }
+      &>.table.end{
+        margin-right: 5%;
+      }
+      &>.table.end:last-child{
+        margin-right:0;
+      }
+    }
+  }
+  .table_teacher{
+    width: 60%;
+    margin: 10px auto;
+    height: 150px;
+    border-radius: 10px;
+    background: #51D774;
+  }
+  .classes_footer{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content:space-between;
+    background: #51D774;
+    &>div{
+      width: 100px;
+      flex-grow:1;
+      text-align: center;
+    }
+    .btn{
+      height: 30px;
+      line-height: 30px;
+      margin: 10px;
+      width: 80%;
+      color: #fff;
+      background: #F47252;
+      border-radius: 5px;
+    }
+  }
+}

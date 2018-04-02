@@ -13,7 +13,7 @@ const state = {
     newMsgCount: 0, //新消息数量
     allContacts: contact.contacts, //所有联系人
     OfficialAccounts: OfficialAccounts, //所有关注的公众号
-    currentPageName: "微信", //用于在wx-header组件中显示当前页标题
+    currentPageName: "test", //用于在wx-header组件中显示当前页标题
     //backPageName: "", //用于在返回按钮出 显示前一页名字 已遗弃
     headerStatus: true, //显示（true）/隐藏（false）wx-header组件
     tipsStatus: false, //控制首页右上角菜单的显示(true)/隐藏(false)
@@ -24,6 +24,16 @@ const state = {
     user:{
         userName:undefined,
         hasLogin:false
+    },
+    info:{
+        userImg: "https://sinacloud.net/vue-wechat/images/headers/header01.png",
+        name:"default",
+        data:{
+            年级:"三年级",
+            等级:"35级",
+            经验:"1230",
+            能力值:"33"
+        }
     },
     msgList: {
         stickMsg: [], //置顶消息列表 后期需要
