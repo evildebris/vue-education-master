@@ -1,3 +1,116 @@
+.shadow{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.2);
+  top: 0;
+  left: 0;
+  .dialog{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    margin: -100px 0 0 -150px;
+    top:50%;
+    left: 50%;
+    background: #FFF7F4;
+    border-radius: 25px;
+    &>.dialog_hd{
+      position: relative;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      background: #EDB335;
+      box-shadow: 0 2px 4px rgba(237, 179, 53,.8);
+      border-radius: 25px 25px 0 0;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+    }
+    &>.dialog_bd{
+      position: relative;
+      width: 100%;
+      height: 160px;
+      padding-top: 10px;
+      &>li{
+        position: relative;
+        height: 30px;
+        line-height: 30px;
+        &::after{
+          content: "";
+          display: block;
+          clear: both;
+        }
+        .task_detail{
+          float: left;
+          width: 180px;
+          padding-left: 20px;
+          height: 30px;
+          line-height: 30px;
+          color: #FA7146;
+          font-size: 16px;
+          text-align: left;
+        }
+        &.over>.task_detail{
+          color: #9C9794;
+        }
+        .btn{
+          float: right;
+          height: 20px;
+          line-height: 20px;
+          margin:5px 30px 0 0;
+          padding: 0 8px;
+          color: #965518;
+          background: #FFD471;
+          border-radius: 20px;
+          text-align: center;
+          font-weight: bold;
+          box-shadow: 0 1px 1px rgba(0,0,0,.4);
+        }
+        &.over>.btn{
+          color: #fff;
+          background:#4ACA7B ;
+        }
+      }
+    }
+  }
+}
+.wx-body{
+  top:45px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: #E4F5FF;
+}
+#student{
+  .time{
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #44B2F9;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 2px solid #E4F4FE;
+  }
+  .student_list{
+    background: #fff;
+    color: #44B2F9;
+    font-size: 16px;
+    width: 100%;
+    &>ul{
+      display: flex;
+      justify-content:space-between;
+      &>li{
+        width: 50px;
+        flex-grow:1;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+}
 #classes{
   width: 100%;
   background: #fff;

@@ -24,7 +24,7 @@
         <footer class="app-footer">
             <nav class="classes_footer">
                 <div>
-                    <router-link class="btn" to="/money" tag="div">同学</router-link>
+                    <router-link class="btn" to="/classes/student" tag="div">同学</router-link>
                 </div><div>
                     <router-link class="btn" to="/money" tag="div">习惯任力</router-link>
                 </div><div>
@@ -34,6 +34,17 @@
                 </div>
             </nav>
         </footer>
+        <section v-show="isShadow" class="shadow" @click.self="hideShadow($event)">
+            <div class="dialog">
+                <div class="dialog_hd">今日上班任务</div>
+                <ul class="dialog_bd">
+                    <li v-for="(val,key) in tasks" :class="{over:val}">
+                        <div class="task_detail">{{key}}</div>
+                        <div class="btn">{{val?"任务已抢完":"抢任务"}}</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 </template>
 <script>
@@ -41,13 +52,18 @@
         mixins: [window.mixin],
         data() {
             return {
+                isShadow:false,
                 "pageName": "X年X班",
-                 tables:[Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6})]
+                 tables:[Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6}),Array.from({length:6})],
+                 tasks:{"XXX":false,"XXXXXXX":false,"www":true}
                 }
         },
         methods:{
             charge(){
                 this.$router.push({path:"/money/stamina"});
+            },
+            hideShadow(){
+                this.isShadow = false;
             }
         },
         computed:{

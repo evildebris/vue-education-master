@@ -34,6 +34,15 @@ const routes = [{
     },
     component: resolve => require(["../components/classes/classes.vue"], resolve)
 },{
+    path: '/classes/student',
+    name: "同学",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/classes/student.vue"], resolve)}
+},{
     path: '/money',
     name: "学习币中心",
     meta: {
