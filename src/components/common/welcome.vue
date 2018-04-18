@@ -1,6 +1,6 @@
 <template>
     <div class="welcome" :class="{hide:hide}">
-        <img src="https://sinacloud.net/vue-wechat/images/welcome.jpg" alt="">
+        <img src="../../assets/images/login_background.jpg" alt="">
     </div>
 </template>
 <script>
@@ -25,7 +25,7 @@ export default {
     bottom: 0;
     width: 100%;
     height: 100%;
-    z-index: 6;
+    z-index: 100;
     background: #000b17;
     animation: welcome 0.5s;
     transition: 0.3s;
@@ -39,6 +39,7 @@ export default {
 
 .welcome img {
     width: 100%;
+    height: 100%;
 }
 .welcome.hide{
     opacity: 0;

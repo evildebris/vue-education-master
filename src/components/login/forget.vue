@@ -5,16 +5,16 @@
             <!--<div class="other"><span>添加朋友</span></div>-->
             <div class="center">
                 <div class="iconfont icon-return-arrow" v-on:click="$router.back()">
-                    <span>返回</span>
+
                 </div>
-                <span>忘记密码</span>
+                <span> 忘记密码 </span>
             </div>
         </header>
-        <p class="info_detail" style="margin-top: 100px">著名教育家叶圣陶说：教育就是培养习惯</p>
+        <div class="register_icon"></div>
         <div class="weui-cells">
             <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <i class="icon iconfont icon-denglu" style="color:#10aeff"></i>
+                    <img src="../../assets/images/ShuRu.png" alt="">
                 </div>
                 <div class="weui-cell__bd">
                     <input class="login_input" type="text" placeholder="请输入手机号">
@@ -22,7 +22,7 @@
             </div>
             <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <i class="icon iconfont icon-password" style="color:#10aeff"></i>
+                    <img src="../../assets/images/ShuRu.png" alt="">
                 </div>
                 <div class="weui-cell__bd">
                     <input class="login_input" type="text" placeholder="请输入密码">
@@ -30,24 +30,26 @@
             </div>
             <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <i class="icon iconfont icon-password" style="color:#10aeff"></i>
+                    <img src="../../assets/images/ShuRu.png" alt="">
                 </div>
                 <div class="weui-cell__bd">
                     <input class="login_input" type="text" placeholder="请再次输入密码">
                 </div>
             </div>
-            <div class="weui-cell">
-                <div class="weui-cell__hd">
-                    <!--<i class="icon iconfont icon-password" style="color:#10aeff"></i>-->
-                </div>
-                <div class="weui-cell__bd">
-                    <input class="login_input" type="text" placeholder="验证码">
+            <div class="weui-cell yan_zheng">
+                <div class="weui-cell__bd weui-cell">
+                    <div class="weui-cell__hd">
+                        <img src="../../assets/images/ShuRu.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="login_input" type="text" placeholder="验证码">
+                    </div>
                 </div>
                 <div class="weui-cell__ft">
-                    <p class="weui-btn" >获取验证码</p>
+                    <p class="weui-btn" >验证码</p>
                 </div>
             </div>
-            <p class="weui-btn" href="#" @click.prevent="next()">确定</p>
+            <p class="confirm_btn"  @click.prevent="confirm()"></p>
         </div>
     </div>
 </template>
@@ -60,7 +62,7 @@
             }
         },
         methods:{
-            next(){
+            confirm(){
             }
         }
     }

@@ -16,6 +16,22 @@ input::-webkit-input-placeholder{
     font-size: 16px;
   }
 }
+.register_icon{
+  background: url(../images/BiaoTi.png) no-repeat;
+  background-size: 100%;
+  width: 80%;
+  height: 115px;
+  margin:50px auto 0px auto;
+  position: relative;
+}
+.register_icon2{
+  background: url(../images/ZiLiaoBT.png) no-repeat;
+  background-size: 100%;
+  width: 80%;
+  height: 125px;
+  margin:10px auto 0px auto;
+  position: relative;
+}
 .login_input{
   width: calc(100% - 30px);
   font-size: 16px;
@@ -23,57 +39,147 @@ input::-webkit-input-placeholder{
   border: 0;
   outline: none;
   vertical-align: middle;
+  color:#57788D;
+  font-family: "Microsoft YaHei";
 }
 .weui-btn{
   margin-top: 20px;
   background: #0bb908;
   color:#fff;
 }
+#register{
+  width: 100%;
+  height: 100%;
+  background: url(../images/login_background.jpg) no-repeat;
+  background-size: 100% 100%;
+  .confirm_btn{
+    display: block;
+    width: 180px;
+    height: 58px;
+    margin: 40px auto 0;
+    background: url(../images/WanCheng.png) no-repeat;
+    background-size: 100% 100%;
+  }
+  .next_btn{
+    display: block;
+    width: 180px;
+    height: 58px;
+    margin: 40px auto 0;
+    background: url(../images/xiayibu.png) no-repeat;
+    background-size: 100% 100%;
+  }
+  .head_icon{
+    background: url(../images/TouXiang.png) no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    label{
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+    img{
+      display: block;
+      margin: 4px 8px 8px;
+      width: 84px;
+      height: 84px;
+    }
+  }
+}
 #login{
   width: 100%;
   height: 100%;
+  background: url(../images/login_background.jpg) no-repeat;
+  background-size: 100% 100%;
   .login_icon{
-    background: url(../../assets/images/header/header01.png) no-repeat;
+    background: url(../images/login_logo.png) no-repeat;
     background-size: 100% 100%;
-    width: 100px;
-    height: 100px;
-    margin:50px 0 0px -50px;
+    width: 240px;
+    height: 200px;
+    margin:50px auto 0px auto;
     position: relative;
-    left: 50%;
     border-radius: 10px;
-  }
-  .weui-cells{
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 40px;
-    .weui-cell{
-      border: 1px solid #d9d9d9;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .weui-cell:first-child{
-      margin-top: 0;
-    }
-  }
-  .weui-cell__hd {
-    img {
-      width: 20px;
-      margin-right: 10px;
-      display: block;
-    }
   }
   .login_box{
     display: flex;
     width: 100%;
     justify-content:center;
     color: #a7a5a5;
-    margin-top: 40px;
+    margin-top: 10px;
+    padding: 0 40px;
     &>p{
       flex-grow:1;
+      width: 100px;
+      display: block;
+      height: 40px;
       text-align: center;
+      &.forget_btn{
+        background: url(../images/WangJi.png);
+        background-size: 100% 100%;
+      }
+      &.register_btn{
+        background: url(../images/zhuce.png);
+        background-size: 100% 100%;
+      }
       span{
         color: #fff;
       }
     }
+  }
+}
+.weui-cells{
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 30px;
+  .login_btn{
+    display: block;
+    width: 200px;
+    height: 64px;
+    margin: 30px auto;
+    background: url(../images/login_btn.png) no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+  }
+  &:before{
+    position: static;
+  }
+  padding: 0 4px;
+  .weui-cell{
+    &:before{
+      position: static;
+    }
+    &.yan_zheng{
+      border:none;
+      box-shadow:none;
+      padding: 0;
+      background: transparent;
+      .weui-btn{
+        &:after{
+          border: none;
+        }
+        margin-top: 2px;
+        color: transparent;
+        border: none;
+        background: url(../images/yanzheng.png) no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    margin-top: 12px;
+    box-shadow: 5px 0px 5px rgba(0,0,0,.05),-5px 0px 5px rgba(0,0,0,.05),0px 5px 5px rgba(0,0,0,.05),0px -5px 5px rgba(0,0,0,.05);
+  }
+  .weui-cell:first-child{
+    margin-top: 4px;
+  }
+}
+.weui-cell__hd {
+  img {
+    width: 20px;
+    margin-right: 10px;
+    display: block;
   }
 }
