@@ -38,9 +38,15 @@ const mutations = {
     toggleHeaderStatus(state, status) {
         state.headerStatus = status
     },
+    toggleAlertStatus(state, options) {
+        state.alertStatus = options.status;
+        if(options.text){
+            state.alertContent = options.text;
+        }
+    },
     //切换“微信”页中右上角菜单
     toggleTipsStatus(state, status) {
-        if (status == -1) {
+        if (status == -1) {ArrayBuffer
             state.tipsStatus = false
         } else {
             state.tipsStatus = !state.tipsStatus

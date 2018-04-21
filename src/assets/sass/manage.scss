@@ -2,20 +2,36 @@
   width: 100%;
   position: relative;
   .manage_info{
-    width: 100%;
+    width: 90%;
+    margin: -60px auto 0;
     padding: 20px 10px 0;
     position: relative;
+    z-index: 100;
+    background: #fff;
+    border-radius: 15px;
+    height: 140px;
+    border: 2px solid #DEEBF1;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.05);
+    .user_bg{
+      width: 80px;
+      height: 80px;
+      padding: 7px 10px;
+      background: url(../images/user_bg.png) no-repeat;
+      background-size: 100%;
+      margin-left: -5px;
+      margin-top: -15px;
+    }
     .userImg{
-      width: 40px;
-      height: 40px;
-      border-radius: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
     }
     .userName{
       position: absolute;
-      left: 70px;
-      top:25px;
-      color: #4e5156;
-      font-size: 16px;
+      left: 80px;
+      top:15px;
+      color: #3f3f3f;
+      font-size: 20px;
       width: 80px;
       overflow: hidden;
       white-space: nowrap;
@@ -23,26 +39,45 @@
     }
     .userAction{
       position: absolute;
-      top:20px;
+      top:-40px;
+      right: 0px;
       display: flex;
-      left: 150px;
-      width: calc(100% - 190px);
+      width: 90px;
       justify-content:center;
       color: #ff9800;
       &>p{
+        &>.manage_icon{
+          width: 40px;
+          height: 40px;
+          background: url(../images/manage_icon.png) no-repeat;
+          background-size: 100%;
+        }
+        &>.help_icon{
+          width: 40px;
+          height: 40px;
+          background: url(../images/help_icon.png) no-repeat;
+          background-size: 100%;
+        }
+        &>.response_icon{
+          width: 40px;
+          height: 40px;
+          background: url(../images/response_icon.png) no-repeat;
+          background-size: 100%;
+        }
         flex-grow:1;
         text-align: center;
       }
     }
     .userInfo{
       position: absolute;
-      top:40px;
+      top:50px;
       display: flex;
       flex-wrap:wrap;
-      left: 140px;
-      width: calc(100% - 150px);
+      left: 80px;
+      width: calc(100% - 94px);
       justify-content:center;
-      color: #ff9800;
+      color: #737373;
+      font-size: 15px;
       &>div{
         flex-grow:1;
         text-align: left;
@@ -51,24 +86,140 @@
         }
       }
     }
+    .stamina{
+      display: block;
+      width: 120px;
+      background: url(../images/tili.png) no-repeat;
+      background-size: 100%;
+      height: 40px;
+      margin-left: 20px;
+      position: relative;
+      p{
+        color: #fff;
+        position: absolute;
+        right: 20px;
+        line-height: 40px;
+        width: 44px;
+        text-align: center;
+      }
+    }
+    .info_money{
+      display: block;
+      width: 138px;
+      background: url(../images/xiguanbi.png) no-repeat;
+      background-size: 100%;
+      height: 40px;
+      margin-left: calc(50% - 130px);
+      position: relative;
+      p{
+        color: #fff;
+        position: absolute;
+        right: 20px;
+        line-height: 40px;
+        width: 44px;
+        text-align: center;
+      }
+    }
   }
 
   .manage_detail{
     width: 100%;
-    margin-top: 20px;
-    padding: 20px 0 0;
+    padding: 10px 0 0;
     display: flex;
     justify-content:space-around;
     align-content:space-around;
     flex-flow: row wrap;
     &>div{
-      width: 44%;
-      height: 100px;
-      margin-top: 6%;
+      width: 46%;
+      height: 128px;
+      margin-top: 4%;
       text-align: center;
-      background: #10aeff;
-      border-radius: 10px;
-      box-shadow: 2px 1px 1px rgba(0,0,0,.3);
+      position: relative;
+      /*box-shadow: 2px 1px 1px rgba(0,0,0,.3);*/
+      p{
+        color: #fff;
+        font-size: 15px;
+        font-weight: bold;
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+        text-shadow:2px 2px rgb(150,88,9);
+      }
+    }
+    .new::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 55px;
+      height: 48px;
+      background: url(../images/new.png) no-repeat;
+      background-size: 100%;
+    }
+    .classes{
+      background: url(../images/class.png) no-repeat;
+      background-size: 100%;
+    }
+    .stamina{
+      background: url(../images/stamina.png) no-repeat;
+      background-size: 100%;
+    }
+    .kezhuo{
+      background: url(../images/kezhuo.png) no-repeat;
+      background-size: 100%;
+    }
+    .friend{
+      background: url(../images/haoyou.png) no-repeat;
+      background-size: 100%;
+    }
+  }
+  .home_footer{
+    display: flex;
+    height: 93px;
+    width: 100%;
+    justify-content:space-between;
+    background: url(../images/nav_bg.png) no-repeat;
+    background-size:  100%;
+    &>div{
+      width: 100px;
+      flex-grow:1;
+      text-align: center;
+    }
+    .btn{
+      height: 80px;
+      line-height: 30px;
+      margin: 10px;
+      width: 80%;
+      color: #fff;
+      background: #F47252;
+      border-radius: 5px;
+      position: relative;
+      p{
+        display: block;
+        width: 100%;
+        position: absolute;
+        font-size: 16px;
+        bottom: -22px;
+      }
+      &.DT{
+        margin-top: -10px;
+        background: url(../images/DongTai.png) no-repeat;
+        background-size:100% 100%;
+      }
+      &.JL{
+        margin-top: -20px;
+        background: url(../images/JiangLiJLx.png) no-repeat;
+        background-size:100% 100%;
+      }
+      &.RW{
+        margin-top: -20px;
+        background: url(../images/RenWuJL.png) no-repeat;
+        background-size:100% 100%;
+      }
+      &.FX{
+        margin-top: -10px;
+        background: url(../images/FenXiang.png) no-repeat;
+        background-size:100% 100%;
+      }
     }
   }
 }

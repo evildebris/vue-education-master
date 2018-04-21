@@ -21,6 +21,9 @@ const state = {
     apiUrl: {
         demo: apiPublicDomain + ""
     },
+    alertStatus:false,
+    alertTitle:"提示",
+    alertContent:"",
     user:{
         userName:undefined,
         hasLogin:false
@@ -28,11 +31,16 @@ const state = {
     info:{
         userImg: "https://sinacloud.net/vue-wechat/images/headers/header01.png",
         name:"default",
+        sex:"male",
         data:{
-            年级:"三年级",
+            /*年级:"三年级",*/
             等级:"35级",
             经验:"1230",
             能力值:"33"
+        },
+        data2:{
+            stamina:"100",
+            XiGuanBi:"1000",
         }
     },
     msgList: {

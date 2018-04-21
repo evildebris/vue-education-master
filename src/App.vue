@@ -3,9 +3,9 @@
         <welcome></welcome>
         <div class="outter" :class="{'hideLeft':$route.path.split('/').length>2}">
             <!--通用头部-->
-            <header class="app-header" :class="{'header-hide':!$store.state.headerStatus}">
+            <!--<header class="app-header" :class="{'header-hide':!$store.state.headerStatus}">
                 <wx-header></wx-header>
-            </header>
+            </header>-->
             <!--搜索框 只在“微信”和“通讯录”页面下显示-->
             <!--<search v-show="$route.path.indexOf('explore')===-1&&$route.path.indexOf('self')===-1"></search>-->
             <!--四个门面页 “微信” “通讯录” “发现” “我”-->
@@ -23,6 +23,7 @@
         <transition name="custom-classes-transition" :enter-active-class="enterAnimate" :leave-active-class="leaveAnimate">
             <router-view name="subPage" class="sub-page"></router-view>
         </transition>
+        <alert-text></alert-text>
     </div>
 </template>
 
@@ -30,6 +31,7 @@
     import welcome from './components/common/welcome.vue'
     import WxHeader from './components/common/wx-header'
     import WxNav from './components/common/wx-nav'
+    import AlertText from './components/common/alert-text.vue'
     import mixin from "./vuex/mixin.js" // 混合被单独放在 mixin.js 中管理
     window.mixin = mixin // 将 混合/mixin 暴露在窗口对象中，某些组件需要时，直接提取 window.mixin 
     export default {
@@ -37,7 +39,8 @@
         components: {
             WxHeader,
             WxNav,
-            welcome
+            welcome,
+            AlertText
         },
         data() {
             return {

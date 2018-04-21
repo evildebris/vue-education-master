@@ -9,6 +9,7 @@
                 <span> 注册 </span>
             </div>
         </header>
+        <!--第一步-->
         <section v-show="!hasNext" id="first_part">
             <div class="register_icon"></div>
             <div class="weui-cells">
@@ -25,7 +26,7 @@
                         <img src="../../assets/images/ShuRu.png" alt="">
                     </div>
                     <div class="weui-cell__bd">
-                        <input class="login_input" v-model="msg.password" type="text" placeholder="请输入密码">
+                        <input class="login_input" v-model="msg.password" type="password" placeholder="请输入密码">
                     </div>
                 </div>
                 <div class="weui-cell">
@@ -33,7 +34,7 @@
                         <img src="../../assets/images/ShuRu.png" alt="">
                     </div>
                     <div class="weui-cell__bd">
-                        <input class="login_input" v-model="msg.password2" type="text" placeholder="请再次输入密码">
+                        <input class="login_input" v-model="msg.password2" type="password" placeholder="请再次输入密码">
                     </div>
                 </div>
                 <div class="weui-cell yan_zheng">
@@ -52,14 +53,23 @@
                 <p class="next_btn"  @click.prevent="next()"></p>
             </div>
         </section>
+        <!--第二步-->
         <section v-show="hasNext" id="second_part">
+
             <div class="register_icon2"></div>
+
+            <!--头像-->
             <input id="fileUpload" type="file" accept="image/*" @change="onFileChange($event)" style="display: none">
-            <div class="head_icon">
-                <label for="fileUpload">
-                    <img :src="msg.userImg" alt="" >
-                </label>
+            <label class="head_icon" for="fileUpload">
+                <img :src="msg.userImg" alt="" >
+            </label>
+            <p class="head_icon_detail">点击图标，上传头像</p>
+            <div class="box sex_select">
+                <div @click="sexSelect('male')" :class="{male:true,active:msg.sex==='male',floatBox:true}"><div/><p>男孩</p></div>
+                <div @click="sexSelect('female')" :class="{female:true,active:msg.sex==='female',floatBox:true}"><div/><p>女孩</p></div>
             </div>
+
+
             <div class="weui-cells">
                 <div class="weui-cell">
                     <div class="weui-cell__hd">
@@ -97,13 +107,14 @@
         data() {
             return {
                 "pageName": "注册",
-                hasNext:true,
+                hasNext:false,
                 msg:{
                     phone:"",
                     password:"",
                     password2:"",
                     checkNum:"",
-                    userImg:""
+                    userImg:"",
+                    sex:"male"
                 }
             }
         },
@@ -116,15 +127,27 @@
                 let isRight = this.msg.phone&&phoneReg.test(this.msg.phone),content="";
                 if(!isRight){
                     content = "输入手机号码错误！";
+                    this.alertText(content);
+                    return;
                 }
                 isRight =isRight && this.msg.password === this.msg.password&& this.msg.password!="";
                 if(!isRight){
                     content = "密码错误！";
+                    this.alertText(content);
+                    return;
                 }
-                //this.hasNext = true;
+                this.hasNext = true;
+            },
+            alertText(text){
+                if(!this.$store.state.alertStatus) {
+                    this.$store.commit('toggleAlertStatus', {status: true, text})
+                }
             },
             confirm(e){
 
+            },
+            sexSelect(sex){
+                if(this.msg.sex !==sex)this.msg.sex =sex;
             },
             onFileChange(e){
                 let files = e.target.files || e.dataTransfer.files;
