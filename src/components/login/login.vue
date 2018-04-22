@@ -8,7 +8,7 @@
                     <img src="../../assets/images/phone_icon.png" alt="">
                 </div>
                 <div class="weui-cell__bd">
-                    <input class="login_input" type="text" placeholder="请输入手机号">
+                    <input class="login_input" v-model="mobile" type="text" placeholder="请输入手机号">
                 </div>
             </div>
             <div class="weui-cell">
@@ -16,10 +16,10 @@
                     <img src="../../assets/images/password_icon.png" alt="">
                 </div>
                 <div class="weui-cell__bd">
-                    <input class="login_input" type="password" placeholder="请输入密码">
+                    <input class="login_input" v-model="password" type="password" placeholder="请输入密码">
                 </div>
             </div>
-            <a class="login_btn" href="#" @click.prevent="loginClick()"></a>
+            <p class="login_btn" @click.prevent="loginClick()""></p>
         </div>
         <div class="login_box">
             <router-link to="/forget" tag="p" class="forget_btn" ></router-link>
@@ -32,16 +32,31 @@ export default {
     mixins: [window.mixin],
     data() {
         return {
-            "pageName": "登陆"
+            "pageName": "登陆",
+            mobile:"",
+            password:""
         }
     },
     mounted() {
     },
     methods:{
         loginClick(){
-            console.log("login");
-            this.$store.commit("refreshCookie",{userName:"test"});
-            this.$router.push({path:"/"});
+            this.axios.get(this.$store.state.apiUrl.default+"login",{
+                params:{
+                    mobile:this.mobile,
+                    password:this.password
+                }
+            }).then((result)=>{
+                debugger
+                if(result.status === 200&&result.data.code === 0){
+                    this.alertText("登录成功！");
+                }
+            },(e)=>{
+                debugger
+                this.alertText("登录接口申请失败！");
+            });
+            /*this.$store.commit("refreshCookie",{userName:"test"});
+            this.$router.push({path:"/"});*/
         }
     }
 }

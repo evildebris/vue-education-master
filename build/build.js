@@ -15,6 +15,7 @@ spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
+    if (err) console.log("删除失败")
   webpack(webpackConfig, function (err, stats) {
     spinner.stop()
     if (err) throw err

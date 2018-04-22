@@ -69,7 +69,7 @@ const routes = [{
         back:true
     },
     components:{ "subPage":  resolve => require(["../components/money/stamina.vue"], resolve)}
-},
+}/*,
     {
         path: '/explore',
         name: "发现",
@@ -81,7 +81,7 @@ const routes = [{
             "default": resolve => require(["../components/explore/explore.vue"], resolve),
             "subPage": resolve => require(["../components/explore/moments.vue"], resolve)
         }
-    }, /*{
+    }, {
         path: '/self',
         name: "我",
         component: resolve => require(["../components/self/self.vue"], resolve)

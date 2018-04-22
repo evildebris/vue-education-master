@@ -19,7 +19,7 @@ const state = {
     tipsStatus: false, //控制首页右上角菜单的显示(true)/隐藏(false)
     // 所有接口地址 后期需要
     apiUrl: {
-        demo: apiPublicDomain + ""
+        default:"http://t.aixiguan.com/"
     },
     alertStatus:false,
     alertTitle:"提示",

@@ -65,8 +65,8 @@
             </label>
             <p class="head_icon_detail">点击图标，上传头像</p>
             <div class="box sex_select">
-                <div @click="sexSelect('male')" :class="{male:true,active:msg.sex==='male',floatBox:true}"><div/><p>男孩</p></div>
-                <div @click="sexSelect('female')" :class="{female:true,active:msg.sex==='female',floatBox:true}"><div/><p>女孩</p></div>
+                <div @click="sexSelect(1)" :class="{male:true,active:msg.sex===1,floatBox:true}"><div/><p>男孩</p></div>
+                <div @click="sexSelect(2)" :class="{female:true,active:msg.sex===2,floatBox:true}"><div/><p>女孩</p></div>
             </div>
 
 
@@ -76,7 +76,7 @@
                         <img src="../../assets/images/ShuRu.png" alt="">
                     </div>
                     <div class="weui-cell__bd">
-                        <input class="login_input" type="text" placeholder="孩子昵称">
+                        <input class="login_input" v-model="msg.nickname" type="text" placeholder="孩子昵称">
                     </div>
                 </div>
                 <div class="weui-cell">
@@ -84,7 +84,7 @@
                         <img src="../../assets/images/ShuRu.png" alt="">
                     </div>
                     <div class="weui-cell__bd">
-                        <input class="login_input" type="text" placeholder="出生日期">
+                        <input class="login_input" v-model="msg.birth" type="text" placeholder="出生日期">
                     </div>
                 </div>
                 <div class="weui-cell">
@@ -92,7 +92,7 @@
                         <img src="../../assets/images/ShuRu.png" alt="">
                     </div>
                     <div class="weui-cell__bd">
-                        <input class="login_input" type="text" placeholder="真实姓名">
+                        <input class="login_input" v-model="msg.name" type="text" placeholder="真实姓名">
                     </div>
                 </div>
                 <p class="confirm_btn"  @click.prevent="confirm()"></p>
@@ -114,7 +114,10 @@
                     password2:"",
                     checkNum:"",
                     userImg:"",
-                    sex:"male"
+                    sex:1,
+                    name:"",
+                    nickname:"",
+                    birth:""
                 }
             }
         },
@@ -144,7 +147,29 @@
                 }
             },
             confirm(e){
-
+                if(this.msg.name==""){
+                    this.alertText("姓名不能为空！");
+                    return;
+                }else if(this.msg.nickname==""){
+                    this.alertText("昵称不能为空！");
+                    return;
+                }
+                let result ={
+                    mobile:this.msg.phone,
+                    code:this.msg.checkNum,
+                    password:this.msg.password,
+                    sex:this.msg.sex,
+                    birth:this.msg.checkNum,
+                    name:this.msg.name,
+                    nickname:this.msg.nickname,
+                }
+                this.axios.post(this.$store.state.apiUrl.default+"register",result).then((result)=>{
+                    if(result.status === 200&&result.data.code === 0){
+                        this.alertText("注册成功！");
+                    }
+                },(e)=>{
+                    this.alertText("注册接口申请失败！");
+                });
             },
             sexSelect(sex){
                 if(this.msg.sex !==sex)this.msg.sex =sex;

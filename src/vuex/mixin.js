@@ -4,6 +4,13 @@
             this.$store.commit("setPageName", this.pageName)
                 // console.log('全局混合mounted')
         },
+        methods:{
+            alertText(text){
+                if(!this.$store.state.alertStatus) {
+                    this.$store.commit('toggleAlertStatus', {status: true, text})
+                }
+            }
+        },
         activated() {
             this.$store.commit("setPageName", this.pageName)
                 // console.log('全局混合activated')
