@@ -25,14 +25,33 @@ const routes = [{
     },
     component: resolve => require(["../components/home/home.vue"], resolve)
 },{
-    path: '/classes',
+    path: '/classes/index',
     name: "班级",
     meta: {
         // 添加该字段，表示进入这个路由是需要登录的
         requireAuth: true,
         back:true
     },
-    component: resolve => require(["../components/classes/classes.vue"], resolve)
+    components:{ "subPage":  resolve => require(["../components/classes/classes.vue"], resolve)}
+/*    component: resolve => require(["../components/classes/classes.vue"], resolve)*/
+},{
+    path: '/classes/habit',
+    name: "习惯任务",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/classes/habit.vue"], resolve)}
+},{
+    path: '/classes/habit2',
+    name: "习惯任务2",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/classes/habit2.vue"], resolve)}
 },{
     path: '/classes/student',
     name: "同学",
@@ -42,6 +61,15 @@ const routes = [{
         back:true
     },
     components:{ "subPage":  resolve => require(["../components/classes/student.vue"], resolve)}
+},{
+    path: '/classes/desk',
+    name: "课桌",
+    meta: {
+        // 添加该字段，表示进入这个路由是需要登录的
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/classes/desk.vue"], resolve)}
 },{
     path: '/money',
     name: "学习币中心",
@@ -138,9 +166,26 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
     // 判断该路由是否需要登录权限
     if (to.meta.requireAuth) {
+        let enterAnimate,leaveAnimate;
         store.commit("refreshCookie");
-        console.log(`hasLogin is ${store.state.user.hasLogin}`);
         if (store.state.user.hasLogin) {
+            if(from.meta.hasGo){
+                enterAnimate = "animated fadeInRight";
+                leaveAnimate = "animated fadeOutLeft";
+                from.meta.hasGo = false;
+                store.commit("refreshAnimate",{
+                    enterAnimate,
+                    leaveAnimate
+                });
+            }else if(to.meta.back&&!to.meta.hasGo){
+                enterAnimate = "animated fadeInLeft"
+                leaveAnimate = "animated fadeOutRight"
+                to.meta.hasGo = true;
+                store.commit("refreshAnimate",{
+                    enterAnimate,
+                    leaveAnimate
+                });
+            }
             next();
         }else{
             next({path: '/login'});

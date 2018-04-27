@@ -2,7 +2,7 @@
     <!--登陆组件-->
     <div id="login">
         <div class="login_icon"></div>
-        <div class="weui-cells">
+        <div class="weui-cells" style="position: absolute;bottom: 86px">
             <div class="weui-cell">
                 <div class="weui-cell__hd">
                     <img src="../../assets/images/phone_icon.png" alt="">
@@ -19,7 +19,7 @@
                     <input class="login_input" v-model="password" type="password" placeholder="请输入密码">
                 </div>
             </div>
-            <p class="login_btn" @click.prevent="loginClick()""></p>
+            <p class="login_btn" @touchend.prevent="loginClick()""></p>
         </div>
         <div class="login_box">
             <router-link to="/forget" tag="p" class="forget_btn" ></router-link>
@@ -41,20 +41,33 @@ export default {
     },
     methods:{
         loginClick(){
-            this.axios.get(this.$store.state.apiUrl.default+"login",{
+            let vue = this;
+            vue.axios({
+                method:"post",
+                url: vue.$store.state.apiUrl.default+"login",
                 params:{
-                    mobile:this.mobile,
-                    password:this.password
+                    mobile:vue.mobile+"",
+                    password:vue.password+""
+                },
+                headers: {
+                    'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                    'X-Requested-With':'XMLHttpRequest'
                 }
             }).then((result)=>{
-                debugger
-                if(result.status === 200&&result.data.code === 0){
-                    this.alertText("登录成功！");
+                if(result.status === 200&&result.data.code === 0&&result.data.extra){
+                    Object.assign(result.data.extra,{password:vue.password});
+                    vue.$store.commit("loginData",result.data.extra);
+                    vue.$store.commit("refreshCookie",{userName:result.data.extra.username});
+                    vue.alertText("登录成功！",()=>{
+                        vue.$router.push({path:"/"});
+                    });
+                }else if(result.status === 200){
+                    vue.alertText(`登录失败:${result.data.message}！`);
                 }
-            },(e)=>{
-                debugger
-                this.alertText("登录接口申请失败！");
-            });
+            }).catch((e) => {
+                vue.alertText(`登录失败:请求错误${e}！`);
+                }
+            );
             /*this.$store.commit("refreshCookie",{userName:"test"});
             this.$router.push({path:"/"});*/
         }

@@ -43,7 +43,7 @@
                             <img src="../../assets/images/ShuRu.png" alt="">
                         </div>
                         <div class="weui-cell__bd">
-                            <input class="login_input" v-model="msg.checkNum" type="text" placeholder="验证码">
+                            <input class="login_input" style="width: 100%" v-model="msg.checkNum" type="text" placeholder="验证码">
                         </div>
                     </div>
                     <div class="weui-cell__ft">
@@ -70,7 +70,7 @@
             </div>
 
 
-            <div class="weui-cells">
+            <div class="weui-cells" style="margin-top: 5px;">
                 <div class="weui-cell">
                     <div class="weui-cell__hd">
                         <img src="../../assets/images/ShuRu.png" alt="">
@@ -141,11 +141,6 @@
                 }
                 this.hasNext = true;
             },
-            alertText(text){
-                if(!this.$store.state.alertStatus) {
-                    this.$store.commit('toggleAlertStatus', {status: true, text})
-                }
-            },
             confirm(e){
                 if(this.msg.name==""){
                     this.alertText("姓名不能为空！");
@@ -163,12 +158,24 @@
                     name:this.msg.name,
                     nickname:this.msg.nickname,
                 }
-                this.axios.post(this.$store.state.apiUrl.default+"register",result).then((result)=>{
+                this.axios({
+                    method:"post",
+                    url: this.$store.state.apiUrl.default+"register",
+                    params:result
+                    ,headers: {
+                        'Content-type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With':'XMLHttpRequest'
+                    }
+                }).then((result)=>{
                     if(result.status === 200&&result.data.code === 0){
-                        this.alertText("注册成功！");
+                        this.alertText("注册成功！",()=>{
+                            this.$router.push({path:"/login"});
+                        });
+                    }else if(result.status === 200){
+                        this.alertText(`注册失败:${result.data.message}！`);
                     }
                 },(e)=>{
-                    this.alertText("注册接口申请失败！");
+                    this.alertText("注册失败！");
                 });
             },
             sexSelect(sex){

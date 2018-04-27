@@ -23,24 +23,28 @@
         <transition name="custom-classes-transition" :enter-active-class="enterAnimate" :leave-active-class="leaveAnimate">
             <router-view name="subPage" class="sub-page"></router-view>
         </transition>
-        <alert-text></alert-text>
+        <alert></alert>
     </div>
 </template>
 
 <script>
     import welcome from './components/common/welcome.vue'
-    import WxHeader from './components/common/wx-header'
-    import WxNav from './components/common/wx-nav'
-    import AlertText from './components/common/alert-text.vue'
+    import alert from './components/common/alert-text.vue'
     import mixin from "./vuex/mixin.js" // 混合被单独放在 mixin.js 中管理
     window.mixin = mixin // 将 混合/mixin 暴露在窗口对象中，某些组件需要时，直接提取 window.mixin 
     export default {
         name: 'app',
         components: {
-            WxHeader,
-            WxNav,
             welcome,
-            AlertText
+            alert
+        },
+        mixins: [window.mixin],
+        beforeMount(){
+            this.hasLogin &&this.refreshLoginData();
+            this.$store.commit("setAnimateCallback",(enterAnimate,leaveAnimate)=>{
+                this.enterAnimate = enterAnimate;
+                this.leaveAnimate = leaveAnimate;
+            });
         },
         data() {
             return {
@@ -92,4 +96,6 @@
     /*weui 样式库 非常适合高仿微信*/
     
     @import "assets/css/lib/weui.min.css";
+
+    @import "assets/css/classes.css";
 </style>

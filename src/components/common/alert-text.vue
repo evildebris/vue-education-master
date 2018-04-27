@@ -25,6 +25,10 @@
                 if (this.$store.state.headerStatus) {
                     this.$store.commit('toggleAlertStatus', {status:false})
                 }
+                if(this.$store.state.alertCallback){
+                    this.$store.state.alertCallback();
+                    this.$store.commit('cancelAlertCallback')
+                }
             }
         }
     }

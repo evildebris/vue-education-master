@@ -11,6 +11,12 @@ const mutations = {
     setPageName(state, name) {
         state.currentPageName = name
     },
+    setClazz(state,clazz){
+        if(clazz instanceof Array){
+            clazz.push(state.user.extra);
+            state.clazz = clazz;
+        }
+    },
     //更新cookie中登录信息
     refreshCookie(state,user){
         if(user && typeof user === 'object'&&user.userName){
@@ -18,16 +24,40 @@ const mutations = {
                 userName:user.userName,
                 hasLogin:true
             });
-            vueCookie.set('userName',user.userName,1);
+            vueCookie.set('aixig_userName',user.userName,1);
         }else {
-            let userName =vueCookie.get('userName');
+            let userName =vueCookie.get('aixig_userName');
             if(userName){
+                let extra =window.localStorage.getItem("aixi_extra");
                 state.user.hasLogin = true;
                 state.user.userName = userName;
+                if(extra){
+                    state.user.extra = JSON.parse(extra);
+                }
             }else {
                 state.user.hasLogin = false;
                 state.user.userName = undefined;
             }
+        }
+    },
+    loginData(state,extra){
+        if(extra && typeof extra === "object"){
+            window.localStorage.setItem("aixi_extra",JSON.stringify(extra));
+            state.user.extra = extra;
+        }
+    },
+    updateExtra(state,extra){
+        if(extra && typeof extra === "object"){
+            Object.assign(state.user.extra,extra);
+            window.localStorage.setItem("aixi_extra",JSON.stringify(state.user.extra));
+        }
+    },
+    refreshAnimate(state,options){
+        state.animateCallback&&state.animateCallback(options.enterAnimate,options.leaveAnimate);
+    },
+    setAnimateCallback(state,callback){
+        if(typeof callback === "function"){
+            state.animateCallback = callback;
         }
     },
     //设置前一页名字 已遗弃
@@ -43,6 +73,12 @@ const mutations = {
         if(options.text){
             state.alertContent = options.text;
         }
+        if(typeof options.callback === "function"){
+            state.alertCallback = options.callback;
+        }
+    },
+    cancelAlertCallback(state){
+        state.alertCallback = undefined;
     },
     //切换“微信”页中右上角菜单
     toggleTipsStatus(state, status) {

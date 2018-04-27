@@ -1,11 +1,11 @@
-#wx-header {
+#wx-header{
     position: relative;
     z-index: 99;
     // overflow: hidden;
     height: 45px;
     // font-size: 15px;
     padding: 0 15px 0 10px;
-    line-height: 45px;
+    line-height: 55px;
     background: transparent;
     opacity: 1;
     color: #fff;
@@ -15,12 +15,36 @@
     &.home_header{
         background: url(../images/header2.png) no-repeat;
         background-size: 100%;
-        height: 155px;
+        height: 100px;
         .center {
             span {
-                line-height: 70px;
+                line-height: 40px;
+                height: 40px;
+                display: block;
             }
         }
+    }
+    &.home_header2{
+        background: url(../images/header.png) no-repeat;
+        background-size: 100%;
+        height: 60px;
+        background-position-y: -27px;
+        .center {
+            span {
+                line-height: 40px;
+                height: 40px;
+                display: block;
+            }
+        }
+    }
+    .iconfont.icon-return-arrow::before{
+        content: '';
+    }
+    .iconfont.icon-return-arrow{
+        width: 40px;
+        height: 40px;
+        background: url("../images/back.png") no-repeat;
+        background-size: 100%;
     }
     .center {
         margin: 0 auto;
@@ -28,7 +52,7 @@
         font-size: 17px;
         span {
             color: #f47258;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             /*text-shadow:0 0 4px #fff,
             -0 -0 4px #fff;*/
@@ -37,6 +61,7 @@
         }
         .icon-return-arrow {
             left: 10px;
+            top:4px;
             position: absolute;
             font-size: 16px;
             font-weight: bold;

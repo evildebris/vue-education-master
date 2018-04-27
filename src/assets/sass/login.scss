@@ -24,15 +24,15 @@ input::-webkit-input-placeholder{
   background-size: 100%;
   width: 80%;
   height: 115px;
-  margin:50px auto 0px auto;
+  margin:6px auto 0px auto;
   position: relative;
 }
 .register_icon2{
   background: url(../images/ZiLiaoBT.png) no-repeat;
   background-size: 100%;
-  width: 80%;
+  width: 58%;
   height: 125px;
-  margin:10px auto 0px auto;
+  margin:-12px auto 0px auto;
   position: relative;
 }
 .login_input{
@@ -57,17 +57,17 @@ input::-webkit-input-placeholder{
   background-size: 100% 100%;
   .confirm_btn{
     display: block;
-    width: 180px;
-    height: 58px;
-    margin: 40px auto 0;
+    width: 120px;
+    height: 48px;
+    margin: 20px auto 0;
     background: url(../images/WanCheng.png) no-repeat;
     background-size: 100% 100%;
   }
   .next_btn{
     display: block;
-    width: 180px;
-    height: 58px;
-    margin: 40px auto 0;
+    width: 120px;
+    height: 48px;
+    margin: 20px auto 0;
     background: url(../images/xiayibu.png) no-repeat;
     background-size: 100% 100%;
   }
@@ -75,9 +75,9 @@ input::-webkit-input-placeholder{
     background: url(../images/TouXiang.png) no-repeat;
     background-size: 100% 100%;
     display: block;
-    width: 100px;
-    height: 100px;
-    margin: 10px auto 0;
+    width: 80px;
+    height: 80px;
+    margin: -50px auto 0;
     label{
       display: block;
       width: 100%;
@@ -93,8 +93,8 @@ input::-webkit-input-placeholder{
   }
   .head_icon_detail{
     width: 150px;
-    height: 30px;
-    line-height: 30px;
+    height: 20px;
+    line-height: 20px;
     margin: 0 auto;
     display: block;
     background: #3BA8EB;
@@ -161,14 +161,13 @@ input::-webkit-input-placeholder{
 }
 #login{
   width: 100%;
-  height: 100%;
   background: url(../images/login_background.jpg) no-repeat;
   background-size: 100% 100%;
   .login_icon{
     background: url(../images/login_logo.png) no-repeat;
     background-size: 100% 100%;
-    width: 240px;
-    height: 200px;
+    width: 191px;
+    height: 157px;
     margin:50px auto 0px auto;
     position: relative;
     border-radius: 10px;
@@ -178,7 +177,8 @@ input::-webkit-input-placeholder{
     width: 100%;
     justify-content:center;
     color: #a7a5a5;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 30px;
     padding: 0 40px;
     &>p{
       flex-grow:1;
@@ -203,12 +203,11 @@ input::-webkit-input-placeholder{
 .weui-cells{
   width: 70%;
   margin-left: 15%;
-  margin-top: 30px;
   .login_btn{
     display: block;
-    width: 200px;
-    height: 64px;
-    margin: 30px auto;
+    width: 132px;
+    height: 47px;
+    margin: 30px auto 5px;
     background: url(../images/login_btn.png) no-repeat;
     background-size: 100% 100%;
     cursor: pointer;

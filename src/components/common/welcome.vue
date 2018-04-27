@@ -1,6 +1,8 @@
 <template>
     <div class="welcome" :class="{hide:hide}">
         <img src="../../assets/images/login_background.jpg" alt="">
+        <div class="login_icon"></div>
+        <p>Loading...</p>
     </div>
 </template>
 <script>
@@ -37,9 +39,30 @@ export default {
     animation-delay: 0.8s; */
 }
 
+.welcome .login_icon{
+    background: url("../../assets/images/login_logo.png") no-repeat;
+    background-size: 100% 100%;
+    width: 240px;
+    height: 200px;
+    position: absolute;
+    border-radius: 10px;
+    top:50px;
+    left: 50%;
+    margin-left: -120px;
+}
+
 .welcome img {
     width: 100%;
     height: 100%;
+}
+.welcome p{
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    bottom: 100px;
+    position: absolute;
 }
 .welcome.hide{
     opacity: 0;

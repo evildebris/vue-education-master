@@ -1,7 +1,7 @@
 <template>
     <!--个人中心组件-->
     <div id="self_manage">
-        <header id="wx-header" class="home_header">
+        <header id="wx-header" class="header home_header">
             <div class="center">
                 <span> 个人中心 </span>
             </div>
@@ -10,25 +10,29 @@
             <div class="user_bg">
                 <img class="userImg" :src="$store.state.info.userImg">
             </div>
-            <p class="userName">{{$store.state.info.name}}</p>
+            <p class="userName">{{$store.state.user.extra.nickname}}</p>
             <div class="userAction">
                 <router-link to="/" tag="p"><div class="manage_icon"></div></router-link>
                 <router-link to="/" tag="p"><div class="help_icon"></div></router-link>
                 <router-link to="/" tag="p"><div class="response_icon"></div></router-link>
             </div>
             <div class="userInfo">
-                <div v-for="(val, key) in $store.state.info.data">{{key}}：<span>{{val}}</span></div>
+                <div>等级：<span>{{$store.state.user.extra.level}}</span></div>
+                <div>经验：<span>{{$store.state.user.extra.exp}}</span></div>
+                <div>能力：<span>{{$store.state.user.extra.cap}}</span></div>
             </div>
-            <ul class="floatBox" style="height: 40px">
-                <li class="stamina"><p>{{$store.state.info.data2.stamina}}</p></li>
-                <li class="info_money"><p>{{$store.state.info.data2.XiGuanBi}}</p></li>
+            <ul class="floatBox" style="height: 40px;margin-top: -11px">
+                <li class="stamina"><p>{{$store.state.user.extra.phy}}</p></li>
+                <li class="info_money"><p>{{$store.state.user.extra.bitxi}}</p></li>
             </ul>
         </div>
-        <section class="manage_detail">
-            <router-link class="classes new" to="/classes" tag="div"><p>三年级18班</p></router-link>
-            <router-link class="stamina" to="/money" tag="div"><p >学习币中心</p></router-link>
-            <div class="kezhuo"><p>课桌</p></div>
-            <div class="friend"><p>好友</p></div>
+        <section class="manage_center">
+            <div class="manage_detail">
+                <router-link class="classes new" to="/classes/index" tag="div"><p>{{$store.state.user.extra.grade}}年级{{$store.state.user.extra.clazz}}班</p></router-link>
+                <router-link class="stamina" to="/money" tag="div"><p>学习币中心</p></router-link>
+                <router-link class="kezhuo" to="/classes/desk" tag="div"><p>课桌</p></router-link>
+                <router-link class="friend" to="/classes/student" tag="div"><p>好友</p></router-link>
+            </div>
         </section>
         <footer class="app-footer">
             <nav class="home_footer">
@@ -54,6 +58,11 @@
             return {
                 "pageName": "个人中心"
             }
+        },
+        mounted(){
+            this.post2('api/list_my_clazz_users',{access_token:this.$store.state.user.extra.access_token},(result)=>{
+                this.$store.commit('setClazz', result.data)
+            })
         },
         computed:{
             infoData(){

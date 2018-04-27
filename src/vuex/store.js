@@ -24,9 +24,24 @@ const state = {
     alertStatus:false,
     alertTitle:"提示",
     alertContent:"",
+    alertCallback:undefined,
+    clazz:[],
     user:{
         userName:undefined,
-        hasLogin:false
+        hasLogin:false,
+        extra:{},
+        roleMap:{
+            0:"学生",
+            1:"体育委员",
+            2:"劳动委员",
+            3:"纪律委员",
+            4:"生活委员",
+            5:"文艺委员",
+            6:"学习委员",
+            7:"副班长",
+            8:"班长",
+            undefined:"无"
+        }
     },
     info:{
         userImg: "https://sinacloud.net/vue-wechat/images/headers/header01.png",

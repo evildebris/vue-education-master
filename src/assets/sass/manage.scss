@@ -1,5 +1,6 @@
 #self_manage{
   width: 100%;
+  height: 100%;
   position: relative;
   .manage_info{
     width: 90%;
@@ -9,27 +10,27 @@
     z-index: 100;
     background: #fff;
     border-radius: 15px;
-    height: 140px;
+    height: 100px;
     border: 2px solid #DEEBF1;
     box-shadow: 5px 5px 10px rgba(0,0,0,.05);
     .user_bg{
-      width: 80px;
-      height: 80px;
-      padding: 7px 10px;
+      width: 21%;
+      padding: 7px;
       background: url(../images/user_bg.png) no-repeat;
       background-size: 100%;
       margin-left: -5px;
       margin-top: -15px;
     }
     .userImg{
-      width: 60px;
-      height: 60px;
+      width: 90%;
+      height: 90%;
+      margin-left: 5%;
       border-radius: 30px;
     }
     .userName{
       position: absolute;
       left: 80px;
-      top:15px;
+      top:6px;
       color: #3f3f3f;
       font-size: 20px;
       width: 80px;
@@ -70,7 +71,7 @@
     }
     .userInfo{
       position: absolute;
-      top:50px;
+      top:35px;
       display: flex;
       flex-wrap:wrap;
       left: 80px;
@@ -88,44 +89,52 @@
     }
     .stamina{
       display: block;
-      width: 120px;
+      width: 100px;
       background: url(../images/tili.png) no-repeat;
       background-size: 100%;
       height: 40px;
-      margin-left: 20px;
+      margin-left: 40px;
       position: relative;
       p{
         color: #fff;
         position: absolute;
-        right: 20px;
-        line-height: 40px;
+        right: 11px;
+        line-height: 32px;
         width: 44px;
         text-align: center;
       }
     }
     .info_money{
       display: block;
-      width: 138px;
+      width: 110px;
       background: url(../images/xiguanbi.png) no-repeat;
       background-size: 100%;
       height: 40px;
-      margin-left: calc(50% - 130px);
+      margin-left: calc(50% - 120px);
       position: relative;
       p{
         color: #fff;
         position: absolute;
-        right: 20px;
-        line-height: 40px;
+        right: 11px;
+        line-height: 32px;
         width: 44px;
         text-align: center;
       }
     }
   }
-
+  .manage_center{
+    width: 100%;
+    height: calc(100% - 180px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: -10px;
+    position: absolute;
+  }
   .manage_detail{
     width: 100%;
-    padding: 10px 0 0;
+    padding: 0;
     display: flex;
+    margin-bottom: 40px;
     justify-content:space-around;
     align-content:space-around;
     flex-flow: row wrap;
@@ -157,48 +166,49 @@
     }
     .classes{
       background: url(../images/class.png) no-repeat;
-      background-size: 100%;
+      background-size: 100% 100%;
     }
     .stamina{
       background: url(../images/stamina.png) no-repeat;
-      background-size: 100%;
+      background-size: 100% 100%;
     }
     .kezhuo{
       background: url(../images/kezhuo.png) no-repeat;
-      background-size: 100%;
+      background-size: 100% 100%;
     }
     .friend{
       background: url(../images/haoyou.png) no-repeat;
-      background-size: 100%;
+      background-size: 100% 100%;
     }
   }
   .home_footer{
     display: flex;
-    height: 93px;
+    height: 50px;
     width: 100%;
     justify-content:space-between;
     background: url(../images/nav_bg.png) no-repeat;
-    background-size:  100%;
+    background-size:  100% 100%;
     &>div{
       width: 100px;
       flex-grow:1;
       text-align: center;
     }
     .btn{
-      height: 80px;
+      height: 50px;
       line-height: 30px;
       margin: 10px;
-      width: 80%;
+      width: 50px;
       color: #fff;
       background: #F47252;
       border-radius: 5px;
       position: relative;
       p{
         display: block;
-        width: 100%;
+        width: 63px;
         position: absolute;
-        font-size: 16px;
-        bottom: -22px;
+        font-size: 14px;
+        bottom: -17px;
+        margin-left: -6px;
       }
       &.DT{
         margin-top: -10px;

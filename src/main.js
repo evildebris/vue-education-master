@@ -11,6 +11,9 @@ import filters from './filters' //将全部过滤器放在 filters/index.js 中�
 Vue.use(VueAxios, axios, vuex)
     // 注册全局过滤器
 filters(Vue)
+/*axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';*/
 
 Vue.config.productionTip = false //将此值设置为 false ,会关闭 Vue 启动时的提示信息，推荐
 
