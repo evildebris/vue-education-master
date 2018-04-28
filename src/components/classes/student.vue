@@ -22,19 +22,24 @@
                 <span>打游戏时间</span>
                 <span>x天x小时</span>
             </article>
+            <ul class=" table_title box">
+                <li>昵称</li>
+                <li>性别</li>
+                <li>等级</li>
+                <li>经验值</li>
+                <li>能力值</li>
+                <li>身份</li>
+                <li class="num3"></li>
+            </ul>
             <article class="student_list">
-                <ul class=" table_title">
-                    <li>昵称</li>
-                    <li>性别</li>
-                    <li>等级</li>
-                    <li>经验值</li>
-                    <li>能力值</li>
-                    <li>身份</li>
-                    <li class="num3"></li>
-                </ul>
-                <ul v-for="item in students" class="table_cell">
-                    <li v-for="val in item">{{val}}</li>
-                    <li class="num3"><p class="add_friend" @click.prevent="addFriend()"></p></li>
+                <ul v-for="item in classList" class="table_cell">
+                    <li>{{item.nickname}}</li>
+                    <li>{{item.sex==1?"男":"女"}}</li>
+                    <li>{{item.level}}</li>
+                    <li>{{item.exp}}</li>
+                    <li>{{item.cap}}</li>
+                    <li>{{$store.state.user.roleMap[item.role]}}</li>
+                    <li class="num3"><p class="add_friend" @click.prevent="addFriend(item)"></p></li>
                 </ul>
             </article>
         </div>
@@ -64,10 +69,14 @@
         /*components: {
         },*/
         mixins: [window.mixin],
+        beforeMount(){
+            this.refreshList();
+        },
         data() {
             return {
                 "pageName": "同学列表",
                  time:{dd:"00",hh:"00",mm:"00"},
+                classList:[],
                  students:[["XXX","男","100","1000","1000","无"],["XXX1","男","100","1000","1000","无"],["XXX2","男","100","1000","1000","无"]]
                }
         },
@@ -84,14 +93,22 @@
                 this.time.mm = this.checkTime(mm);
                 this.time.ss = this.checkTime(ss);//小于10的话加0
             },
+            refreshList(){
+                let classList = this.$store.state.clazz;
+                classList = classList.filter((stu)=>{
+                    return this.$store.state.user.extra.id != stu.id;
+                });
+                this.classList = classList;
+            },
             checkTime(i) {
                 if (i < 10) {
                     i = "0" + i;
                 }
                 return i;
             },
-            addFriend(){
-
+            addFriend(stu){
+                this.post2('api/add_friend',{access_token:this.$store.state.user.extra.access_token,targetid:stu.id},(result)=>{
+                })
             }
         }
     }

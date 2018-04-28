@@ -152,14 +152,24 @@
     text-align: center;
     border-bottom: 2px solid #E4F4FE;
   }
+  .table_title{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 4px solid #C4DAE7;
+    &>li{
+      color: #2773A4;
+      line-height: 50px;
+    }
+  }
   .student_list{
     background: #fff;
     color: #797979;
     font-size: 16px;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: absolute;
-    height: calc(100% - 55px);
+    height: calc(100% - 100px);
     background: url(../images/friend_bg.png) no-repeat;
     background-size:100%;
     background-position: bottom;
@@ -170,15 +180,6 @@
       height: 40px;
       border-bottom: 2px solid #E4F5FF;
       background: #fff;
-      &.table_title{
-        height: 50px;
-        line-height: 50px;
-        border-bottom: 4px solid #C4DAE7;
-        &>li{
-          color: #2773A4;
-          line-height: 50px;
-        }
-      }
       &>li{
         &.num2{
           flex-grow: 2;

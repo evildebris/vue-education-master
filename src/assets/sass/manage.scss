@@ -14,7 +14,8 @@
     border: 2px solid #DEEBF1;
     box-shadow: 5px 5px 10px rgba(0,0,0,.05);
     .user_bg{
-      width: 21%;
+      width: 66px;
+      height: 66px;
       padding: 7px;
       background: url(../images/user_bg.png) no-repeat;
       background-size: 100%;
@@ -87,13 +88,19 @@
         }
       }
     }
+    .user_info_list{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -3px;
+    }
     .stamina{
       display: block;
       width: 100px;
       background: url(../images/tili.png) no-repeat;
       background-size: 100%;
       height: 40px;
-      margin-left: 40px;
+      margin-left: 57px;
       position: relative;
       p{
         color: #fff;

@@ -21,7 +21,7 @@
                 <div>经验：<span>{{$store.state.user.extra.exp}}</span></div>
                 <div>能力：<span>{{$store.state.user.extra.cap}}</span></div>
             </div>
-            <ul class="floatBox" style="height: 40px;margin-top: -11px">
+            <ul class="floatBox user_info_list">
                 <li class="stamina"><p>{{$store.state.user.extra.phy}}</p></li>
                 <li class="info_money"><p>{{$store.state.user.extra.bitxi}}</p></li>
             </ul>

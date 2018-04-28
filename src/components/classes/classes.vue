@@ -75,7 +75,10 @@
                 }
         },
         beforeMount(){
-            this.refreshList();
+            this.post2('api/list_my_clazz_users',{access_token:this.$store.state.user.extra.access_token},(result)=>{
+                this.$store.commit('setClazz', result.data)
+                this.refreshList();
+            });
         },
         mounted(){
         },
