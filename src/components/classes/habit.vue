@@ -20,7 +20,7 @@
         </div>
         <div class="classes_btns">
             <div class="leftBtn">身份:<span>{{role}}</span></div>
-            <div class="rightBtn">添加 <router-link class="add_job" tag="p" to="/classes/habit2"></router-link></div>
+            <div class="rightBtn">添加 <router-link class="add_job" tag="p" to="/classes/habit/habit2"></router-link></div>
         </div>
         <ul class="job_list">
             <li v-for="item in tasks" class="job">

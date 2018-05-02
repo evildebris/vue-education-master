@@ -25,6 +25,46 @@ const routes = [{
     },
     component: resolve => require(["../components/home/home.vue"], resolve)
 },{
+    path: '/home/help',
+    name: "帮助",
+    meta: {
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/home/help.vue"], resolve)}
+},{
+    path: '/home/friend',
+    name: "好友",
+    meta: {
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/classes/friend.vue"], resolve)}
+},{
+    path: '/home/awardRecord',
+    name: "奖励记录",
+    meta: {
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/home/awardRecord.vue"], resolve)}
+},{
+    path: '/home/award',
+    name: "奖励",
+    meta: {
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/home/award.vue"], resolve)}
+},{
+    path: '/home/jobRecord',
+    name: "任务记录",
+    meta: {
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/home/jobRecord.vue"], resolve)}
+},{
     path: '/classes/index',
     name: "班级",
     meta: {
@@ -33,7 +73,6 @@ const routes = [{
         back:true
     },
     components:{ "subPage":  resolve => require(["../components/classes/classes.vue"], resolve)}
-/*    component: resolve => require(["../components/classes/classes.vue"], resolve)*/
 },{
     path: '/classes/habit',
     name: "习惯任务",
@@ -44,7 +83,7 @@ const routes = [{
     },
     components:{ "subPage":  resolve => require(["../components/classes/habit.vue"], resolve)}
 },{
-    path: '/classes/habit2',
+    path: '/classes/habit/habit2',
     name: "习惯任务2",
     meta: {
         // 添加该字段，表示进入这个路由是需要登录的

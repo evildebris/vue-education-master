@@ -58,6 +58,25 @@
                 }, (e) => {
                     console.error(`${this.$store.state.apiUrl.default + url}失败!`);
                 });
+            },
+            post3(url, params, callBack) {
+                this.axios({
+                    method: "post",
+                    url: this.$store.state.apiUrl.default + url,
+                    params: params
+                    , headers: {
+                        'Content-type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                }).then((result) => {
+                    if (result.status === 200 && result.data.code === 0) {
+                        callBack(result);
+                    } else if (result.status === 200) {
+                        console.error(`${this.$store.state.apiUrl.default + url}失败:${result.data.message}！`);
+                    }
+                }, (e) => {
+                    console.error(`${this.$store.state.apiUrl.default + url}失败!`);
+                });
             }
         },
         activated() {

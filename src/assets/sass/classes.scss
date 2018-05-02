@@ -601,6 +601,11 @@
     }
   }
 }
+.background_com{
+  background: url(../images/friend_bg.png) no-repeat;
+  background-size:100%;
+  background-position: bottom;
+}
 #habit{
   width: 100%;
   height: 100%;
@@ -764,5 +769,276 @@
         }
       }
     }
+  }
+}
+#help {
+  background: #E4F5FF;
+  .help_block {
+    width: 100%;
+    height: calc(100% - 60px);
+    padding: 20px;
+    color: #5a5a5a;
+    font-size: 16px;
+  }
+}
+#friend{
+  .header_tab{
+    height: 60px;
+    line-height: 60px;
+    box-shadow:0 5px 5px rgba(0,0,0,.1);
+    background: #fff;
+    z-index: 2;
+    &>li{
+      width: 100px;
+    }
+    p.NiCheng{
+      display: block;
+      width: 30px;
+      margin:  0 auto;
+      height: 100%;
+      background: url("../images/NiCheng@2x.png") no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+    p.level{
+      display: block;
+      width: 30px;
+      margin:  0 auto;
+      height: 100%;
+      background: url("../images/DengJi@2x.png") no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+    p.NengLi{
+      display: block;
+      width: 44px;
+      margin:  0 auto;
+      height: 100%;
+      background: url("../images/NengLiZhi@2x.png") no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+    p.ShenFen{
+      display: block;
+      width: 29px;
+      margin:  0 auto;
+      height: 100%;
+      background: url("../images/ShenFeng@2x.png") no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+    p.BanJi{
+      display: block;
+      width: 62px;
+      margin:  0 auto;
+      height: 100%;
+      background: url("../images/SuoZaiBanJi@2x.png") no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+  }
+  .list{
+    margin-top: 10px;
+    &>li{
+      height: 40px;
+      line-height: 40px;
+    }
+    &>li:nth-child(odd){
+      background: #c4def2;
+    }
+    &>li:nth-child(even){
+      background: #b7d1e4;
+    }
+  }
+}
+.job2{
+  width: 90%;
+  margin: 10px 5%;
+  height: 90px;
+  border: 2px solid #A3DBFE;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0,0,0,.1);
+  .job_text{
+    width: 60%;
+    height: 40px;
+    color: #838383;
+    font-size: 14px;
+    padding-left: 10px;
+    .job_title{
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:before{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        background: url(../images/XiaoXi@2x.png) no-repeat;
+        background-size:100%;
+        left: 5px;
+      }
+      width: 100%;
+      padding-left: 30px;
+      span{
+        font-size: 16px;
+        line-height: 30px;
+        color: #5D5D5D;
+      }
+    }
+  }
+  .job_time{
+    width: 40%;
+    height: 40px;
+    text-align: right;
+    padding-right: 10px;
+    color: #999;
+    line-height: 30px;
+    font-size: 14px;
+  }
+  .job_info{
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      background: url(../images/XiGbi@2x.png) no-repeat;
+      background-size:100%;
+      left: 10px;
+    }
+    p{
+      padding-left: 40px;
+      color: #ef6752;
+      font-size: 20px;
+    }
+  }
+  .job_info2{
+    p{
+      margin: 10px 10px 10px calc(50% - 20px);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      line-height: 40px;
+      &.tili{
+        background: #84E266;
+      }
+      &.xiMoney{
+        background: #7F97EF;
+      }
+      &.power{
+        background: #FF8F5F;
+      }
+      &.exp{
+        background: #6DC2F8;
+      }
+    }
+  }
+}
+.job3{
+  width: 80%;
+  margin: 10px 10%;
+  height: 110px;
+  border: 2px solid #A3DBFE;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0,0,0,.1);
+  .job_text{
+    width: 100%;
+    height: 30px;
+    color: #838383;
+    background: #ECECEC;
+    font-size: 14px;
+    border-radius: 10px 10px 0 0;
+    padding-left: 10px;
+    .job_title{
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:before{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        background: url(../images/XiaoXi@2x.png) no-repeat;
+        background-size:100%;
+        left: 5px;
+      }
+      width: 100%;
+      padding-left: 30px;
+      span{
+        font-size: 16px;
+        line-height: 30px;
+        color: #5D5D5D;
+      }
+    }
+  }
+  .job_time{
+    width: 40%;
+    height: 30px;
+    text-align: right;
+    padding-right: 10px;
+    color: #999;
+    line-height: 30px;
+    font-size: 14px;
+  }
+  .job_info{
+    p{
+      margin: 10px 10px 10px calc(50% - 20px);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      line-height: 40px;
+      &.tili{
+        background: #84E266;
+      }
+      &.xiMoney{
+        background: #7F97EF;
+      }
+      &.power{
+        background: #FF8F5F;
+      }
+      &.exp{
+        background: #6DC2F8;
+      }
+    }
+    span{
+      display: block;
+      margin-top: -10px;
+      color: #8F8F8F;
+    }
+  }
+}
+.list{
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#jobRecord{
+  .line{
+    height: calc(100% - 60px);
+    border-left:1px solid #a7a7a7;
+    position: absolute;
+    top:60px;
+    left: 5%;
+  }
+  .record_time{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      left: 12px;
+      margin-top: 2px;
+      background: #6DC2F8;
+    }
+    color: #999;
+    font-size: 14px;
+    padding-left: 8%;
   }
 }

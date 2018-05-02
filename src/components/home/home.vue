@@ -13,7 +13,7 @@
             <p class="userName">{{$store.state.user.extra.nickname}}</p>
             <div class="userAction">
                 <router-link to="/" tag="p"><div class="manage_icon"></div></router-link>
-                <router-link to="/" tag="p"><div class="help_icon"></div></router-link>
+                <router-link to="/home/help" tag="p"><div class="help_icon"></div></router-link>
                 <router-link to="/" tag="p"><div class="response_icon"></div></router-link>
             </div>
             <div class="userInfo">
@@ -31,7 +31,7 @@
                 <router-link class="classes new" to="/classes/index" tag="div"><p>{{$store.state.user.extra.grade}}年级{{$store.state.user.extra.clazz}}班</p></router-link>
                 <router-link class="stamina" to="/money" tag="div"><p>学习币中心</p></router-link>
                 <router-link class="kezhuo" to="/classes/desk" tag="div"><p>课桌</p></router-link>
-                <router-link class="friend" to="/classes/student" tag="div"><p>好友</p></router-link>
+                <router-link class="friend" to="/home/friend" tag="div"><p>好友</p></router-link>
             </div>
         </section>
         <footer class="app-footer">
@@ -39,9 +39,9 @@
                 <div>
                     <router-link class="btn DT" to="/classes/student" tag="div"><p>动态</p></router-link>
                 </div><div>
-                <router-link class="btn JL" to="/money" tag="div"><p>奖励记录</p></router-link>
+                <router-link class="btn JL" to="/home/awardRecord" tag="div"><p>奖励记录</p></router-link>
             </div><div>
-                <router-link class="btn RW" to="/money" tag="div"><p>任务记录</p></router-link>
+                <router-link class="btn RW" to="/home/jobRecord" tag="div"><p>任务记录</p></router-link>
             </div><div>
                 <router-link class="btn FX" to="/money" tag="div"><p>分享</p></router-link>
             </div>
