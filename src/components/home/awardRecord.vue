@@ -7,7 +7,7 @@
                 <span> 奖励记录 </span>
             </div>
         </header>
-        <ul class="list background_com">
+        <ul class="list background_com" style="height: calc(100% - 60px);">
             <li v-for="item in records" class="job2">
                 <div class="floatBox">
                     <div class="job_text">

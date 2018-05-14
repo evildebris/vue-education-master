@@ -37,7 +37,7 @@
         <footer class="app-footer">
             <nav class="home_footer">
                 <div>
-                    <router-link class="btn DT" to="/classes/student" tag="div"><p>动态</p></router-link>
+                    <router-link class="btn DT" to="/home/trends" tag="div"><p>动态</p></router-link>
                 </div><div>
                 <router-link class="btn JL" to="/home/awardRecord" tag="div"><p>奖励记录</p></router-link>
             </div><div>

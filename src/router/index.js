@@ -41,6 +41,14 @@ const routes = [{
     },
     components:{ "subPage":  resolve => require(["../components/classes/friend.vue"], resolve)}
 },{
+    path: '/home/trends',
+    name: "动态",
+    meta: {
+        requireAuth: true,
+        back:true
+    },
+    components:{ "subPage":  resolve => require(["../components/home/trends.vue"], resolve)}
+},{
     path: '/home/awardRecord',
     name: "奖励记录",
     meta: {
@@ -49,7 +57,7 @@ const routes = [{
     },
     components:{ "subPage":  resolve => require(["../components/home/awardRecord.vue"], resolve)}
 },{
-    path: '/home/award',
+    path: '/home/award/index',
     name: "奖励",
     meta: {
         requireAuth: true,
@@ -136,6 +144,13 @@ const routes = [{
         back:true
     },
     components:{ "subPage":  resolve => require(["../components/money/stamina.vue"], resolve)}
+},{
+    path: '/classes/explore/moments',
+    name: "朋友圈",
+    components: {
+        "default": resolve => require(["../components/explore/explore.vue"], resolve),
+        "subPage": resolve => require(["../components/explore/moments.vue"], resolve)
+    }
 }/*,
     {
         path: '/explore',

@@ -43,9 +43,9 @@
                 </div><div>
                 <div class="btn XGRW"><router-link to="/classes/habit" tag="p"></router-link></div>
             </div><div>
-                <div class="btn JL"><router-link to="/classes/index" tag="p"></router-link></div>
+                <div class="btn JL"><router-link to="/home/award/index" tag="p"></router-link></div>
             </div><div>
-                <div class="btn LYJ"><router-link to="/classes/index" tag="p"></router-link></div>
+                <div class="btn LYJ"><router-link to="/classes/explore/moments" tag="p"></router-link></div>
             </div>
             </nav>
         </footer>
@@ -75,6 +75,18 @@
                 }
         },
         beforeMount(){
+            this.tables.forEach((row)=>{
+                row.forEach && row.forEach((e,index)=>{
+                    row[index] = {
+                        end:(Math.ceil(index/2)-parseInt(index/2))>0,
+                        table:true,
+                        male2:false,
+                        female2:false,
+                        male:false,
+                        female:false
+                    };
+                })
+            });
             this.post2('api/list_my_clazz_users',{access_token:this.$store.state.user.extra.access_token},(result)=>{
                 this.$store.commit('setClazz', result.data)
                 this.refreshList();

@@ -1011,6 +1011,97 @@
     }
   }
 }
+.job4{
+  width: 90%;
+  margin: 10px 5%;
+  height: 90px;
+  border: 2px solid #A3DBFE;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0,0,0,.1);
+  background: #fff;
+  position: relative;
+  .floatBox{
+    border-bottom: 1px solid #A3DBFF;
+  }
+  .rightBox{
+    width: 86px;
+    position: absolute;
+    top:0;
+    right:0;
+    height: 100%;
+    background: #F6F6F6;
+    &>div{
+      width: 90%;
+      height: 90%;
+      margin: 5%;
+      background: url(../images/WoYaoDuiHuan@2x.png) no-repeat;
+      background-size:100%;
+      background-position: center;
+    }
+  }
+  .job_text{
+    width: 60%;
+    height: 40px;
+    color: #838383;
+    font-size: 14px;
+    padding-left: 10px;
+    .job_title{
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:before{
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 30px;
+        margin-top: 3px;
+        background: url(../images/JiangLi@2x.png) no-repeat;
+        background-size:100%;
+        left: 5px;
+      }
+      width: 100%;
+      padding-left: 30px;
+      span{
+        font-size: 16px;
+        line-height: 30px;
+        color: #5D5D5D;
+      }
+    }
+  }
+  .job_time{
+    width: 40%;
+    height: 40px;
+    text-align: right;
+    padding-right: 10px;
+    color: #999;
+    line-height: 30px;
+    font-size: 14px;
+  }
+  .job_info{
+    position: relative;
+    p{
+      padding-left: 40px;
+      color: #8F8F8F;
+      line-height: 40px;
+      font-size: 16px;
+      position: relative;
+      span{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background: #7F97EF;
+        display: block;
+        font-size: 14px;
+        color: #fff;
+        border-radius: 50%;
+        left: 130px;
+        top:5px;
+      }
+    }
+  }
+}
 .list{
   width: 100%;
   height: calc(100% - 60px);
@@ -1040,5 +1131,129 @@
     color: #999;
     font-size: 14px;
     padding-left: 8%;
+  }
+}
+#award{
+  .header_tab{
+    height: 40px;
+    line-height: 40px;
+    box-shadow:0 5px 5px rgba(0,0,0,.1);
+    background: #fff;
+    &>li.active{
+      background: #FF823F;
+    }
+    .gengDuo{
+      width: 20px;
+      height: 40px;
+      background: url(../images/GengDUO@2x.png) no-repeat;
+      background-size: 100%;
+      background-position: center;
+      margin-left: calc(50% - 10px);
+    }
+  }
+}
+#trends{
+  .job3{
+    width: 80%;
+    margin: 10px 10%;
+    height: 110px;
+    border: 2px solid #A3DBFE;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px rgba(0,0,0,.1);
+    .job_text{
+      width: 100%;
+      height: 30px;
+      color: #838383;
+      background: #ECECEC;
+      font-size: 14px;
+      border-radius: 10px 10px 0 0;
+      padding-left: 10px;
+      .job_title{
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &:before{
+          position: absolute;
+          content: '';
+          width: 20px;
+          height: 20px;
+          margin-top: 5px;
+          background: url(../images/XiaoXi@2x.png) no-repeat;
+          background-size:100%;
+          left: 5px;
+        }
+        width: 100%;
+        padding-left: 30px;
+        span{
+          font-size: 16px;
+          line-height: 30px;
+          color: #5D5D5D;
+        }
+      }
+    }
+    .job_time{
+      width: 40%;
+      height: 30px;
+      text-align: right;
+      padding-right: 10px;
+      color: #999;
+      line-height: 30px;
+      font-size: 14px;
+    }
+    .job_info{
+      width: 100%;
+      height: 80px;
+      p{
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        color: #5A5A5A;
+        border-radius: 0;
+        margin: 10px;
+        line-height: 16px;
+        font-size: 15px;
+        span{
+          font-size: 16px;
+          color: #444;
+          text-decoration:underline;
+          display: inline;
+        }
+      }
+      .ok_btn{
+        width: 80px;
+        height: 40px;
+        float: left;
+        margin-left: 30px;
+        background: url(../images/TongYi@2x.png) no-repeat;
+        background-size:100%;
+      }
+      .cancel_btn{
+        width: 80px;
+        height: 40px;
+        float: right;
+        margin-right: 30px;
+        background: url(../images/JuJue@2x.png) no-repeat;
+        background-size:100%;
+      }
+    }
+  }
+}
+.header_tab{
+  height: 40px;
+  line-height: 40px;
+  box-shadow:0 5px 5px rgba(0,0,0,.1);
+  background: #fff;
+  &>li.active{
+    background: #FF823F;
+  }
+  .gengDuo{
+    width: 20px;
+    height: 40px;
+    background: url(../images/GengDUO@2x.png) no-repeat;
+    background-size: 100%;
+    background-position: center;
+    margin-left: calc(50% - 10px);
   }
 }

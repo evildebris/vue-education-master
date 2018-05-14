@@ -1,24 +1,12 @@
 <template>
     <!--朋友圈组件 后期开发的核心-->
     <div id="moments">
-        <header id="wx-header">
+        <header id="wx-header" class="home_header2">
             <div class="center">
-                <router-link to="/explore" tag="div" class="iconfont icon-return-arrow">
-                    <span>发现</span>
-                </router-link>
-                <span>朋友圈</span>
+                <div class="iconfont icon-return-arrow" v-on:click="$router.back()"></div>
+                <span> 留言板 </span>
             </div>
         </header>
-        <div class="home-pic">
-            <div class="home-pic-base">
-                <div class="top-pic">
-                    <div class="top-pic-inner">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/header01.png">
-                    </div>
-                </div>
-                <div class="top-name _ellipsis">阿荡</div>
-            </div>
-        </div>
         <div class="weui-cell moments__post">
             <div class="weui-cell__hd">
                 <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg">
@@ -353,5 +341,5 @@
 
 </script>
 <style>
-    /*@import "../../assets/css/moments.css";*/
+    @import "../../assets/css/moments.css";
 </style>
